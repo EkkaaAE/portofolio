@@ -17,23 +17,37 @@ $media-lg: 1024px;
 $media-xl: 1280px;
 
 // Font Variable
-$font-caveat: "Caveat", cursive;
 $font-poppins: "Poppins", sans-serif;
-$font-onest: "Onest", sans-serif;
+
+// Color Variable
+$color-white: #F9F9F9;
+$color-black: #252A2F;
+$gradienColor: linear-gradient(90deg, rgba(63, 237, 251, 1) 0%, rgba(63, 94, 251, 1) 50%, rgba(213, 70, 252, 1) 100%);
+
+@keyframes rotateBackground {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 0%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
 
 #root {
     width: 100%;
     height: 100vh;
+    background: $color-black;
+
+    @media screen and (max-width: $media-md) {
+        height: auto;
+    }
 
     nav#navigation {
-        @media screen and (max-width: $media-md) {
-            justify-content: space-between;
-            padding: 1vh 2.5vh 0;
-            top: 0;
-        }
-
-        border: 1px solid black;
-
         width: 100%;
         height: auto;
         display: flex;
@@ -41,78 +55,257 @@ $font-onest: "Onest", sans-serif;
         justify-content: center;
         position: fixed;
         top: 2vh;
+        margin: 3.5px;
+        background: transparent;
 
-        ul.header {
+        @media screen and (max-width: $media-md) {
+            position: static;
+            margin: 0;
+            width: 100%;
+            justify-content: space-between;
+            padding: 1vh 2.5vh 0;
+            top: 0;
+        }
+
+        .warpHeader {
+            width: 34%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2px;
+            border-radius: 10vh;
+            background: $gradienColor;
+            background-size: 200% 200%;
+            animation: rotateBackground 10s linear infinite;
+
             @media screen and (max-width: $media-md) {
                 display: none;
             }
 
-            width: 34%;
-            height: auto;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            list-style: none;
-            padding: 8px 21px;
-            border: 2px solid black;
-            border-radius: 5vh;
+            ul.header {
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                list-style: none;
+                padding: 8px 21px;
+                border: 2px solid transparent;
+                background: $color-black;
+                border-radius: 10vh;
 
-            li a {
-                text-decoration: none;
-                font-size: 1rem;
-                font-family: $font-poppins;
-                font-weight: 600;
-                color: black;
+
+
+                li a {
+                    text-decoration: none;
+                    font-size: 1rem;
+                    font-family: $font-poppins;
+                    font-weight: 600;
+                    color: $color-white;
+
+                    @media screen and (max-width: $media-md) {
+                        font-size: 0.8rem;
+                    }
+                }
             }
         }
 
+
         .nickname .nick {
             display: none;
+            color: $color-white;
 
             @media screen and (max-width: $media-md) {
                 display: flex;
                 font-size: 1.5rem;
                 font-family: $font-poppins;
                 font-weight: 600;
-                
-                .nick {
-                }
             }
         }
 
-        .burgerButton {
+
+        button.burgerButton {
             display: none;
+            align-items: center;
+            justify-content: center;
+            aspect-ratio: 1/1;
+            padding: 2.8px;
+            border: none;
+            border-radius: 8px;
 
             @media screen and (max-width: $media-md) {
                 display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                padding: 5px;
-                background: transparent;
-                border: 2px solid black;
-                border-radius: 1vh;
+                background: $gradienColor;
+                background-size: 200% 200%;
+                animation: rotateBackground 5s linear infinite;
+            }
 
-                .line1,
-                .line2,
-                .line3 {
-                    width: 30px;
-                    height: 4px;
-                    background-color: black;
-                    margin: 3.5px;
-                }
-                
-                :hover {
-                    transition: all 0.3s ease-in-out;
-
+            .burger {
+                aspect-ratio: 1/1;
+    
+                @media screen and (max-width: $media-md) {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    background: $color-black;
+                    padding: 0 5px;
+                    border-radius: 6px;
+                    gap: 7px;
+    
+                    .line1,
+                    .line2,
+                    .line3 {
+                        width: 30px;
+                        height: 3px;
+                        display: flex;
+                        background: $gradienColor;
+                        background-size: 200% 200%;
+                        animation: rotateBackground 5s linear infinite;
+                    }
+    
                 }
             }
         }
+
 
     }
 
     #container {
         width: 100%;
-        height: 100vh;
+        height: 94vh;
+
+        @media screen and (max-width: $media-md) {
+            height: auto;
+        }
+
+        main {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 9vh 10rem 0 10rem;
+
+            @media screen and (max-width: $media-md) {
+                width: 100%;
+                height: auto;
+                flex-direction: column-reverse;
+                align-items: center;
+                padding: 0;
+            }
+
+            h1.name {
+                width: 60%;
+                height: auto;
+                font-size: 3.3rem;
+                font-family: $font-poppins;
+                font-weight: 600;
+                color: $color-white;
+                margin-bottom: 10vh;
+
+
+                @media screen and (max-width: $media-lg) {
+                    font-size: 2rem;
+                }
+
+                @media screen and (max-width: $media-md) {
+                    font-size: 1.2rem;
+                    margin-top: 8vh;
+                    width: 100%;
+                    text-align: center;
+                    margin-bottom: 10vh;
+
+                    span.nameIntro {
+                        display: none;
+                    }
+                }
+
+                sup a {
+                    text-decoration: none;
+
+                    i {
+                        font-size: 1.8rem;
+                        color: rgba(63, 237, 251, 1);
+
+                        @media screen and (max-width: $media-md) {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+
+            .profile {
+                width: 40%;
+                height: 100%;
+                display: flex;
+                align-items: flex-end;
+
+                @media screen and (max-width: $media-md) {
+                    width: 100%;
+                    height: auto;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .cardFrofile {
+                    width: 100%;
+                    height: 80%;
+                    border-radius: 10vh 10vh 0 0;
+                    display: flex;
+
+                    @media screen and (max-width: $media-md) {
+                        width: 100%;
+                        height: auto;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    img {
+                        padding: 10px 10px 0;
+                        border: 1px solid transparent;
+                        border-radius: 21vh 21vh 0 0;
+                        height: 100%;
+                        object-fit: contain;
+                        background: $gradienColor;
+                        background-size: 200% 200%;
+                        animation: rotateBackground 5s linear infinite;
+
+                        @media screen and (max-width: $media-md) {
+                            width: 80%;
+                            aspect-ratio: 1/1;
+                            padding: 4px;
+                            border-radius: 100%;
+                            display: flex;
+                            position: relative;
+                            object-fit: cover;
+                            object-position: center top;
+                            background-size: 120% 120%;
+                            margin-top: 10vh;
+                        }
+                    }
+                }
+            }
+        }
+
+        footer {
+            width: 100%;
+            height: 6vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: $gradienColor;
+            background-size: 150% 150%;
+            animation: rotateBackground 5s linear infinite;
+
+
+            h5 {
+                font-family: $font-poppins;
+                font-weight: 500;
+                color: $color-white;
+            }
+        }
     }
 }
