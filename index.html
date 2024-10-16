@@ -11,37 +11,38 @@
     <link rel="stylesheet" href="./src/css/main.css" />
     <!-- JS -->
     <script src="./src/js/app.js" defer></script>
-    <title>My Prtofolio</title>
+    <title>My Portofolio</title>
+    <link rel="icon" href="./public/assets/image/icon.jpg" type="image/png">
 </head>
 <body>
     <div id="root">
-        <nav>
-            <h1>My Portofolio</h1>
-            <ul>
+        <nav id="navigation">
+            <ul class="header">
                 <li>
-                    <a href="index.html">Home</a>
+                    <a href="#">Home</a>
                 </li>
                 <li>
-                    <a href="./src/pages/about.html">About</a>
+                    <a href="#">About</a>
                 </li>
                 <li>
-                    <a href="./src/pages/projects.html">Projects</a>
+                    <a href="#">Projects</a>
                 </li>
                 <li>
-                    <a href="./src/pages/contact.html">Contact</a>
+                    <a href="#">Contact</a>
                 </li>
             </ul>
-            <div class="themeColor">
-                <div class="button">
-                    
-                </div>
+            <div class="nickname">
+                <div class="nick">Eka <br> Prasetiawan,</div>
             </div>
+            <button class="burgerButton">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </button>
         </nav>
-        <div class="profile">
-            <div class="cardProfile">
-                <img src="./public/assets/image/brody.jpg" alt="Profile">
-                <h4>Nama saya <b>Eka Prasetiawan</b> umur saya 20 tahun, saya memiliki hobi bermain bulu tangkis. Saya seorang web developer dengan fokus pada front end, dan saya sangat bersemangat untuk menciptakan desain-desain website yang menarik dan dapat dinikmati oleh semua orang. Dengan keahlian saya dalam pengembangan web, saya berharap bisa memberikan pengalaman yang menyenangkan bagi pengguna melalui karya-karya saya.</h4>
-            </div>
+        <div id="container">
+            <main></main>
+            <footer></footer>
         </div>
     </div>
 </body>
