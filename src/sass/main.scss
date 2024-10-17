@@ -38,9 +38,13 @@ $gradienColor: linear-gradient(90deg, rgba(63, 237, 251, 1) 0%, rgba(63, 94, 251
     }
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 #root {
     width: 100%;
-    height: 100vh;
+    height: auto;
     background: $color-black;
 
     @media screen and (max-width: $media-md) {
@@ -57,6 +61,7 @@ $gradienColor: linear-gradient(90deg, rgba(63, 237, 251, 1) 0%, rgba(63, 94, 251
         top: 2vh;
         margin: 3.5px;
         background: transparent;
+        z-index: 100;
 
         @media screen and (max-width: $media-md) {
             position: static;
@@ -94,18 +99,16 @@ $gradienColor: linear-gradient(90deg, rgba(63, 237, 251, 1) 0%, rgba(63, 94, 251
                 border: 2px solid transparent;
                 background: $color-black;
                 border-radius: 10vh;
-
-
-
+                
                 li a {
                     text-decoration: none;
                     font-size: 1rem;
                     font-family: $font-poppins;
                     font-weight: 600;
                     color: $color-white;
-
-                    @media screen and (max-width: $media-md) {
-                        font-size: 0.8rem;
+                    
+                    @media screen and (max-width: $media-lg) {
+                        font-size: 0.7rem;
                     }
                 }
             }
@@ -174,21 +177,31 @@ $gradienColor: linear-gradient(90deg, rgba(63, 237, 251, 1) 0%, rgba(63, 94, 251
 
     #container {
         width: 100%;
-        height: 94vh;
+        height: 100vh;
 
         @media screen and (max-width: $media-md) {
             height: auto;
         }
-
-        main {
+        
+        section#profile {
             width: 100%;
             height: 100%;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 9vh 10rem 0 10rem;
-
+            z-index: 1;
+            
+            img.background  {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                opacity: 0.01;
+                filter: blur(3px);
+                filter: invert(1);
+            }
+            
             @media screen and (max-width: $media-md) {
                 width: 100%;
                 height: auto;
@@ -196,7 +209,7 @@ $gradienColor: linear-gradient(90deg, rgba(63, 237, 251, 1) 0%, rgba(63, 94, 251
                 align-items: center;
                 padding: 0;
             }
-
+            
             h1.name {
                 width: 60%;
                 height: auto;
@@ -205,19 +218,19 @@ $gradienColor: linear-gradient(90deg, rgba(63, 237, 251, 1) 0%, rgba(63, 94, 251
                 font-weight: 600;
                 color: $color-white;
                 margin-bottom: 10vh;
-
-
+                z-index: 1;
+                
                 @media screen and (max-width: $media-lg) {
                     font-size: 2rem;
                 }
-
+                
                 @media screen and (max-width: $media-md) {
                     font-size: 1.2rem;
                     margin-top: 8vh;
                     width: 100%;
                     text-align: center;
                     margin-bottom: 10vh;
-
+                    
                     span.nameIntro {
                         display: none;
                     }
@@ -225,10 +238,14 @@ $gradienColor: linear-gradient(90deg, rgba(63, 237, 251, 1) 0%, rgba(63, 94, 251
 
                 sup a {
                     text-decoration: none;
-
+                    
                     i {
                         font-size: 1.8rem;
                         color: rgba(63, 237, 251, 1);
+                        
+                        @media screen and (max-width: $media-lg) {
+                            font-size: 1.4rem;
+                        }
 
                         @media screen and (max-width: $media-md) {
                             font-size: 1rem;
@@ -238,55 +255,131 @@ $gradienColor: linear-gradient(90deg, rgba(63, 237, 251, 1) 0%, rgba(63, 94, 251
             }
 
             .profile {
-                width: 40%;
-                height: 100%;
+                width: 100%;
+                height: 98%;
                 display: flex;
-                align-items: flex-end;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                padding: 9vh 10rem 0 10rem;
+                z-index: 1;
 
-                @media screen and (max-width: $media-md) {
-                    width: 100%;
-                    height: auto;
-                    align-items: center;
-                    justify-content: center;
-                }
-
-                .cardFrofile {
-                    width: 100%;
-                    height: 80%;
-                    border-radius: 10vh 10vh 0 0;
+                .fotoProfile {
+                    width: 40%;
+                    height: 100%;
                     display: flex;
-
+                    flex-direction: row;
+                    align-items: flex-end;
+    
                     @media screen and (max-width: $media-md) {
                         width: 100%;
                         height: auto;
                         align-items: center;
                         justify-content: center;
                     }
-
-                    img {
-                        padding: 10px 10px 0;
-                        border: 1px solid transparent;
-                        border-radius: 21vh 21vh 0 0;
-                        height: 100%;
-                        object-fit: contain;
-                        background: $gradienColor;
-                        background-size: 200% 200%;
-                        animation: rotateBackground 5s linear infinite;
-
+    
+                    .cardFrofile {
+                        width: 100%;
+                        height: 80%;
+                        border-radius: 10vh 10vh 0 0;
+                        display: flex;
+    
                         @media screen and (max-width: $media-md) {
-                            width: 80%;
-                            aspect-ratio: 1/1;
-                            padding: 4px;
-                            border-radius: 100%;
-                            display: flex;
-                            position: relative;
-                            object-fit: cover;
-                            object-position: center top;
-                            background-size: 120% 120%;
-                            margin-top: 10vh;
+                            width: 100%;
+                            height: auto;
+                            align-items: center;
+                            justify-content: center;
+                        }
+    
+                        img {
+                            padding: 10px 10px 0;
+                            border: 1px solid transparent;
+                            border-radius: 21vh 21vh 0 0;
+                            height: 100%;
+                            object-fit: contain;
+                            background: $gradienColor;
+                            background-size: 200% 200%;
+                            animation: rotateBackground 5s linear infinite;
+                            
+                            @media screen and (max-width: $media-lg) {
+                                padding: 6px 6px 0;
+                            }
+
+                            @media screen and (max-width: $media-md) {
+                                padding: 7px 7px 0;
+                                width: 80%;
+                                aspect-ratio: 1/1;
+                                padding: 4px;
+                                border-radius: 100%;
+                                display: flex;
+                                position: relative;
+                                object-fit: cover;
+                                object-position: center top;
+                                background-size: 120% 120%;
+                                margin-top: 10vh;
+                            }
                         }
                     }
                 }
+            }
+            
+            .lineProfile {
+                width: 100%;
+                height: 5vh;
+                background: $gradienColor;
+            background-size: 150% 150%;
+            animation: rotateBackground 5s linear infinite;
+            }
+            
+        }
+
+        section#about {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 0 75px 0 10px;
+            background: $color-black;
+
+            img.background  {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                opacity: 0.01;
+                filter: blur(3px);
+                filter: invert(1);
+                rotate: 180deg;
+            }
+            
+            .title {
+                width: 13%;
+                height: 100vh;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                background: $color-white;
+
+                h1 {
+                    display: flex;
+                    padding-left: 20px;
+                    align-items: center;
+                    justify-content: center;
+                    font-family: $font-poppins;
+                    color: $color-black;
+                    font-size: 6.5rem;
+                    font-weight: 700;
+                    letter-spacing: 20px;
+                    rotate: 270deg;
+                }
+            }
+            
+            .cardDescription {
+                width: 87%;
+                height: 100%;
             }
         }
 
@@ -299,7 +392,6 @@ $gradienColor: linear-gradient(90deg, rgba(63, 237, 251, 1) 0%, rgba(63, 94, 251
             background: $gradienColor;
             background-size: 150% 150%;
             animation: rotateBackground 5s linear infinite;
-
 
             h5 {
                 font-family: $font-poppins;

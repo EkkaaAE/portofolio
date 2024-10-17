@@ -20,9 +20,13 @@ button {
     background-position: 0% 0%;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
+
 #root {
   width: 100%;
-  height: 100vh;
+  height: auto;
   background: #252A2F;
 }
 @media screen and (max-width: 768px) {
@@ -40,6 +44,7 @@ button {
   top: 2vh;
   margin: 3.5px;
   background: transparent;
+  z-index: 100;
 }
 @media screen and (max-width: 768px) {
   #root nav#navigation {
@@ -87,9 +92,9 @@ button {
   font-weight: 600;
   color: #F9F9F9;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   #root nav#navigation .warpHeader ul.header li a {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 }
 #root nav#navigation .nickname .nick {
@@ -148,24 +153,33 @@ button {
 }
 #root #container {
   width: 100%;
-  height: 94vh;
+  height: 100vh;
 }
 @media screen and (max-width: 768px) {
   #root #container {
     height: auto;
   }
 }
-#root #container main {
+#root #container section#profile {
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 9vh 10rem 0 10rem;
+  z-index: 1;
+}
+#root #container section#profile img.background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  opacity: 0.01;
+  filter: blur(3px);
+  filter: invert(1);
 }
 @media screen and (max-width: 768px) {
-  #root #container main {
+  #root #container section#profile {
     width: 100%;
     height: auto;
     flex-direction: column-reverse;
@@ -173,7 +187,7 @@ button {
     padding: 0;
   }
 }
-#root #container main h1.name {
+#root #container section#profile h1.name {
   width: 60%;
   height: auto;
   font-size: 3.3rem;
@@ -181,65 +195,82 @@ button {
   font-weight: 600;
   color: #F9F9F9;
   margin-bottom: 10vh;
+  z-index: 1;
 }
 @media screen and (max-width: 1024px) {
-  #root #container main h1.name {
+  #root #container section#profile h1.name {
     font-size: 2rem;
   }
 }
 @media screen and (max-width: 768px) {
-  #root #container main h1.name {
+  #root #container section#profile h1.name {
     font-size: 1.2rem;
     margin-top: 8vh;
     width: 100%;
     text-align: center;
     margin-bottom: 10vh;
   }
-  #root #container main h1.name span.nameIntro {
+  #root #container section#profile h1.name span.nameIntro {
     display: none;
   }
 }
-#root #container main h1.name sup a {
+#root #container section#profile h1.name sup a {
   text-decoration: none;
 }
-#root #container main h1.name sup a i {
+#root #container section#profile h1.name sup a i {
   font-size: 1.8rem;
   color: rgb(63, 237, 251);
 }
+@media screen and (max-width: 1024px) {
+  #root #container section#profile h1.name sup a i {
+    font-size: 1.4rem;
+  }
+}
 @media screen and (max-width: 768px) {
-  #root #container main h1.name sup a i {
+  #root #container section#profile h1.name sup a i {
     font-size: 1rem;
   }
 }
-#root #container main .profile {
+#root #container section#profile .profile {
+  width: 100%;
+  height: 98%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 9vh 10rem 0 10rem;
+  z-index: 1;
+}
+#root #container section#profile .profile .fotoProfile {
   width: 40%;
   height: 100%;
   display: flex;
+  flex-direction: row;
   align-items: flex-end;
 }
 @media screen and (max-width: 768px) {
-  #root #container main .profile {
+  #root #container section#profile .profile .fotoProfile {
     width: 100%;
     height: auto;
     align-items: center;
     justify-content: center;
   }
 }
-#root #container main .profile .cardFrofile {
+#root #container section#profile .profile .fotoProfile .cardFrofile {
   width: 100%;
   height: 80%;
   border-radius: 10vh 10vh 0 0;
   display: flex;
 }
 @media screen and (max-width: 768px) {
-  #root #container main .profile .cardFrofile {
+  #root #container section#profile .profile .fotoProfile .cardFrofile {
     width: 100%;
     height: auto;
     align-items: center;
     justify-content: center;
   }
 }
-#root #container main .profile .cardFrofile img {
+#root #container section#profile .profile .fotoProfile .cardFrofile img {
   padding: 10px 10px 0;
   border: 1px solid transparent;
   border-radius: 21vh 21vh 0 0;
@@ -249,8 +280,14 @@ button {
   background-size: 200% 200%;
   animation: rotateBackground 5s linear infinite;
 }
+@media screen and (max-width: 1024px) {
+  #root #container section#profile .profile .fotoProfile .cardFrofile img {
+    padding: 6px 6px 0;
+  }
+}
 @media screen and (max-width: 768px) {
-  #root #container main .profile .cardFrofile img {
+  #root #container section#profile .profile .fotoProfile .cardFrofile img {
+    padding: 7px 7px 0;
     width: 80%;
     aspect-ratio: 1/1;
     padding: 4px;
@@ -262,6 +299,58 @@ button {
     background-size: 120% 120%;
     margin-top: 10vh;
   }
+}
+#root #container section#profile .lineProfile {
+  width: 100%;
+  height: 5vh;
+  background: linear-gradient(90deg, rgb(63, 237, 251) 0%, rgb(63, 94, 251) 50%, rgb(213, 70, 252) 100%);
+  background-size: 150% 150%;
+  animation: rotateBackground 5s linear infinite;
+}
+#root #container section#about {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 75px 0 10px;
+  background: #252A2F;
+}
+#root #container section#about img.background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  opacity: 0.01;
+  filter: blur(3px);
+  filter: invert(1);
+  rotate: 180deg;
+}
+#root #container section#about .title {
+  width: 13%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: #F9F9F9;
+}
+#root #container section#about .title h1 {
+  display: flex;
+  padding-left: 20px;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  color: #252A2F;
+  font-size: 6.5rem;
+  font-weight: 700;
+  letter-spacing: 20px;
+  rotate: 270deg;
+}
+#root #container section#about .cardDescription {
+  width: 87%;
+  height: 100%;
 }
 #root #container footer {
   width: 100%;
