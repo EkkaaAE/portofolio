@@ -38,12 +38,30 @@ $gradienColor: linear-gradient(90deg, rgba(63, 237, 251, 1) 0%, rgba(63, 94, 251
     }
 }
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-5rem);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
 html {
     scroll-behavior: smooth;
 
     .maintenance {
         display: none;
-        
+
         @media screen and (max-width: $media-md) {
             height: 100vh;
             background: $color-black;
@@ -58,13 +76,22 @@ html {
 
 }
 
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+}
+
+.slide-in {
+    animation: slideIn 2s ease-out;
+}
+
 #root {
     width: 100%;
     height: auto;
     background: $color-black;
 
     @media screen and (max-width: $media-md) {
-
         display: none;
     }
 
@@ -116,14 +143,14 @@ html {
                 border: 2px solid transparent;
                 background: $color-black;
                 border-radius: 10vh;
-                
+
                 li a {
                     text-decoration: none;
                     font-size: 1rem;
                     font-family: $font-poppins;
                     font-weight: 600;
                     color: $color-white;
-                    
+
                     @media screen and (max-width: $media-lg) {
                         font-size: 0.7rem;
                     }
@@ -163,7 +190,7 @@ html {
 
             .burger {
                 aspect-ratio: 1/1;
-    
+
                 @media screen and (max-width: $media-md) {
                     display: flex;
                     flex-direction: column;
@@ -173,7 +200,7 @@ html {
                     padding: 0 5px;
                     border-radius: 6px;
                     gap: 7px;
-    
+
                     .line1,
                     .line2,
                     .line3 {
@@ -184,7 +211,7 @@ html {
                         background-size: 200% 200%;
                         animation: rotateBackground 5s linear infinite;
                     }
-    
+
                 }
             }
         }
@@ -199,7 +226,7 @@ html {
         @media screen and (max-width: $media-md) {
             height: auto;
         }
-        
+
         section#profile {
             width: 100%;
             height: 100%;
@@ -208,8 +235,8 @@ html {
             align-items: center;
             justify-content: center;
             z-index: 1;
-            
-            img.background  {
+
+            img.background {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
@@ -218,7 +245,7 @@ html {
                 filter: blur(3px);
                 filter: invert(1);
             }
-            
+
             @media screen and (max-width: $media-md) {
                 width: 100%;
                 height: auto;
@@ -226,7 +253,7 @@ html {
                 align-items: center;
                 padding: 0;
             }
-            
+
             h1.name {
                 width: 60%;
                 height: auto;
@@ -236,18 +263,18 @@ html {
                 color: $color-white;
                 margin-bottom: 10vh;
                 z-index: 1;
-                
+
                 @media screen and (max-width: $media-lg) {
                     font-size: 2rem;
                 }
-                
+
                 @media screen and (max-width: $media-md) {
                     font-size: 1.2rem;
                     margin-top: 8vh;
                     width: 100%;
                     text-align: center;
                     margin-bottom: 10vh;
-                    
+
                     span.nameIntro {
                         display: none;
                     }
@@ -255,11 +282,11 @@ html {
 
                 sup a {
                     text-decoration: none;
-                    
+
                     i {
                         font-size: 1.8rem;
                         color: rgba(63, 237, 251, 1);
-                        
+
                         @media screen and (max-width: $media-lg) {
                             font-size: 1.4rem;
                         }
@@ -287,27 +314,27 @@ html {
                     display: flex;
                     flex-direction: row;
                     align-items: flex-end;
-    
+
                     @media screen and (max-width: $media-md) {
                         width: 100%;
                         height: auto;
                         align-items: center;
                         justify-content: center;
                     }
-    
+
                     .cardFrofile {
                         width: 100%;
                         height: 80%;
                         border-radius: 10vh 10vh 0 0;
                         display: flex;
-    
+
                         @media screen and (max-width: $media-md) {
                             width: 100%;
                             height: auto;
                             align-items: center;
                             justify-content: center;
                         }
-    
+
                         img {
                             padding: 10px 10px 0;
                             border: 1px solid transparent;
@@ -317,7 +344,7 @@ html {
                             background: $gradienColor;
                             background-size: 200% 200%;
                             animation: rotateBackground 5s linear infinite;
-                            
+
                             @media screen and (max-width: $media-lg) {
                                 padding: 6px 6px 0;
                             }
@@ -339,15 +366,15 @@ html {
                     }
                 }
             }
-            
+
             .lineProfile {
                 width: 100%;
                 height: 5vh;
                 background: $gradienColor;
-            background-size: 150% 150%;
-            animation: rotateBackground 5s linear infinite;
+                background-size: 150% 150%;
+                animation: rotateBackground 5s linear infinite;
             }
-            
+
         }
 
         section#about {
@@ -360,7 +387,7 @@ html {
             padding: 0 75px 0 10px;
             background: $color-black;
 
-            img.background  {
+            img.background {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
@@ -370,7 +397,7 @@ html {
                 filter: invert(1);
                 rotate: 180deg;
             }
-            
+
             .title {
                 width: 13%;
                 height: 100vh;
@@ -393,10 +420,106 @@ html {
                     rotate: 270deg;
                 }
             }
-            
+
             .cardDescription {
                 width: 87%;
                 height: 100%;
+                padding-top: 10vh;
+                display: flex;
+                flex-direction: row;
+                z-index: 1;
+
+                .description1 {
+                    width: 50%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    padding: 4rem 3rem 3rem;
+
+                    h1 {
+                        margin-bottom: 10px;
+                    }
+
+                    .boxDescription1 {
+                        text-align: justify;
+                        color: $color-white;
+                        font-family: $font-poppins;
+                    }
+
+                    .sosmed {
+                        display: flex;
+                        flex-direction: row;
+                        gap: 20px;
+                        font-size: 1.5rem;
+
+                        ul {
+                            list-style: none;
+
+                            li a {
+                                text-decoration: none;
+                                color: $color-white;
+                            }
+                        }
+                    }
+                }
+
+                .description2 {
+                    width: 50%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 3rem;
+                    padding: 4rem 3rem 3rem;
+
+                    h1 {
+                        margin-bottom: 10px;
+                    }
+
+                    .education {
+                        font-family: $font-poppins;
+                        color: $color-white;
+
+                        ul li {
+                            margin-left: 1.1rem;
+                        }
+                    }
+
+                    .skill {
+                        font-family: $font-poppins;
+                        color: $color-white;
+
+                        ul {
+                            display: flex;
+                            flex-direction: row;
+                            flex-wrap: wrap;
+                            gap: 2px;
+
+                            li {
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                margin-right: 15px;
+                            }
+
+                            img {
+                                filter: invert(1);
+                            }
+
+                            img,
+                            i {
+                                width: 1.5rem;
+                                font-size: 1.3rem;
+                                aspect-ratio: 1/1;
+                                color: $color-white;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                margin-right: 4px;
+                            }
+                        }
+                    }
+                }
             }
         }
 

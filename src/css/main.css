@@ -20,6 +20,22 @@ button {
     background-position: 0% 0%;
   }
 }
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes slideIn {
+  0% {
+    transform: translateX(-5rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 html {
   scroll-behavior: smooth;
 }
@@ -37,6 +53,15 @@ html .maintenance {
     font-family: "Poppins", sans-serif;
     font-size: 2rem;
   }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 2s ease-in forwards;
+}
+
+.slide-in {
+  animation: slideIn 2s ease-out;
 }
 
 #root {
@@ -366,6 +391,87 @@ html .maintenance {
 #root #container section#about .cardDescription {
   width: 87%;
   height: 100%;
+  padding-top: 10vh;
+  display: flex;
+  flex-direction: row;
+  z-index: 1;
+}
+#root #container section#about .cardDescription .description1 {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4rem 3rem 3rem;
+}
+#root #container section#about .cardDescription .description1 h1 {
+  margin-bottom: 10px;
+}
+#root #container section#about .cardDescription .description1 .boxDescription1 {
+  text-align: justify;
+  color: #F9F9F9;
+  font-family: "Poppins", sans-serif;
+}
+#root #container section#about .cardDescription .description1 .sosmed {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  font-size: 1.5rem;
+}
+#root #container section#about .cardDescription .description1 .sosmed ul {
+  list-style: none;
+}
+#root #container section#about .cardDescription .description1 .sosmed ul li a {
+  text-decoration: none;
+  color: #F9F9F9;
+}
+#root #container section#about .cardDescription .description2 {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 4rem 3rem 3rem;
+}
+#root #container section#about .cardDescription .description2 h1 {
+  margin-bottom: 10px;
+}
+#root #container section#about .cardDescription .description2 .education {
+  font-family: "Poppins", sans-serif;
+  color: #F9F9F9;
+}
+#root #container section#about .cardDescription .description2 .education ul li {
+  margin-left: 1.1rem;
+}
+#root #container section#about .cardDescription .description2 .skill {
+  font-family: "Poppins", sans-serif;
+  color: #F9F9F9;
+}
+#root #container section#about .cardDescription .description2 .skill ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+#root #container section#about .cardDescription .description2 .skill ul li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 15px;
+}
+#root #container section#about .cardDescription .description2 .skill ul img {
+  filter: invert(1);
+}
+#root #container section#about .cardDescription .description2 .skill ul img,
+#root #container section#about .cardDescription .description2 .skill ul i {
+  width: 1.5rem;
+  font-size: 1.3rem;
+  aspect-ratio: 1/1;
+  color: #F9F9F9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4px;
 }
 #root #container footer {
   width: 100%;
