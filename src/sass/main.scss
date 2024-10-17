@@ -40,6 +40,22 @@ $gradienColor: linear-gradient(90deg, rgba(63, 237, 251, 1) 0%, rgba(63, 94, 251
 
 html {
     scroll-behavior: smooth;
+
+    .maintenance {
+        display: none;
+        
+        @media screen and (max-width: $media-md) {
+            height: 100vh;
+            background: $color-black;
+            color: $color-white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: $font-poppins;
+            font-size: 2rem;
+        }
+    }
+
 }
 
 #root {
@@ -48,7 +64,8 @@ html {
     background: $color-black;
 
     @media screen and (max-width: $media-md) {
-        height: auto;
+
+        display: none;
     }
 
     nav#navigation {
