@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Caveat&family=Onest:wght@500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -40,23 +40,12 @@ button {
   cursor: pointer;
 }
 
-@keyframes animatedBackground1 {
+@keyframes animatedBackground {
   0% {
     background-position: 0% 0%;
   }
   50% {
     background-position: 100% 0%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
-}
-@keyframes animatedBackground2 {
-  0% {
-    background-position: 0% 0%;
-  }
-  50% {
-    background-position: 75% 50%;
   }
   100% {
     background-position: 0% 0%;
@@ -81,580 +70,746 @@ button {
 html {
   scroll-behavior: smooth;
 }
-html .maintenance {
-  display: none;
-}
-@media screen and (max-width: 768px) {
-  html .maintenance {
-    height: 100vh;
-    background: #252A2F;
-    color: #f9f9f9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "Poppins", sans-serif;
-    font-size: 2rem;
-  }
-}
-
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 2s ease-in forwards;
-}
-
-.slide-in {
-  animation: slideIn 2s ease-out;
-}
 
 #root {
   width: 100%;
-  height: auto;
-  background: #252A2F;
+  height: 305vh;
+  background: linear-gradient(90deg, rgb(63, 237, 251) 20%, rgb(63, 94, 251) 50%, rgb(213, 70, 252) 80%);
+  background-size: 200% 200%;
+  animation: animatedBackground 5s ease-in-out infinite;
+  z-index: -1;
 }
 @media screen and (max-width: 768px) {
   #root {
-    display: none;
-  }
-}
-#root nav#navigation {
-  width: 100%;
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  top: 2vh;
-  margin: 3.5px;
-  background: transparent;
-  z-index: 100;
-}
-@media screen and (max-width: 768px) {
-  #root nav#navigation {
-    position: static;
-    margin: 0;
-    width: 100%;
-    justify-content: space-between;
-    padding: 1vh 2.5vh 0;
-    top: 0;
-  }
-}
-#root nav#navigation .warpHeader {
-  width: 34%;
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2px;
-  border-radius: 10vh;
-  background: linear-gradient(45deg, rgb(63, 237, 251) 20%, rgb(63, 94, 251) 50%, rgb(213, 70, 252) 80%);
-  background-size: 200% 200%;
-  animation: animatedBackground1 10s linear infinite;
-}
-@media screen and (max-width: 768px) {
-  #root nav#navigation .warpHeader {
-    display: none;
-  }
-}
-#root nav#navigation .warpHeader ul.header {
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  list-style: none;
-  padding: 8px 21px;
-  border: 2px solid transparent;
-  background: #252A2F;
-  border-radius: 10vh;
-}
-#root nav#navigation .warpHeader ul.header li a {
-  text-decoration: none;
-  font-size: 1rem;
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  color: #f9f9f9;
-}
-@media screen and (max-width: 1024px) {
-  #root nav#navigation .warpHeader ul.header li a {
-    font-size: 0.7rem;
-  }
-}
-#root nav#navigation .nickname .nick {
-  display: none;
-  color: #f9f9f9;
-}
-@media screen and (max-width: 768px) {
-  #root nav#navigation .nickname .nick {
-    display: flex;
-    font-size: 1.5rem;
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-  }
-}
-#root nav#navigation button.burgerButton {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  aspect-ratio: 1/1;
-  padding: 2.8px;
-  border: none;
-  border-radius: 8px;
-}
-@media screen and (max-width: 768px) {
-  #root nav#navigation button.burgerButton {
-    display: flex;
-    background: linear-gradient(45deg, rgb(63, 237, 251) 20%, rgb(63, 94, 251) 50%, rgb(213, 70, 252) 80%);
-    background-size: 200% 200%;
-    animation: animatedBackground1 5s linear infinite;
-  }
-}
-#root nav#navigation button.burgerButton .burger {
-  aspect-ratio: 1/1;
-}
-@media screen and (max-width: 768px) {
-  #root nav#navigation button.burgerButton .burger {
-    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background: #252A2F;
-    padding: 0 5px;
-    border-radius: 6px;
-    gap: 7px;
-  }
-  #root nav#navigation button.burgerButton .burger .line1,
-  #root nav#navigation button.burgerButton .burger .line2,
-  #root nav#navigation button.burgerButton .burger .line3 {
-    width: 30px;
-    height: 3px;
-    display: flex;
-    background: linear-gradient(45deg, rgb(63, 237, 251) 20%, rgb(63, 94, 251) 50%, rgb(213, 70, 252) 80%);
-    background-size: 200% 200%;
-    animation: animatedBackground1 5s linear infinite;
+    justify-content: flex-start;
+    height: 315vh;
   }
 }
-#root #container {
+#root img.background {
   width: 100%;
-  height: 100vh;
+  height: 300vh;
+  position: absolute;
+  object-fit: cover;
+  object-position: top;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 @media screen and (max-width: 768px) {
-  #root #container {
-    height: auto;
+  #root img.background {
+    height: 315vh;
   }
 }
-#root #container section#profile {
+
+#container {
   width: 100%;
-  height: 100%;
+  height: 305vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: 1;
+  z-index: 10;
 }
 @media screen and (max-width: 768px) {
-  #root #container section#profile {
-    width: 100%;
-    height: auto;
-    flex-direction: column-reverse;
+  #container {
+    height: 315vh;
+    flex-direction: column;
     align-items: center;
-    padding: 0;
+    justify-content: flex-start;
   }
 }
-#root #container section#profile h1.name {
-  width: 60%;
-  height: auto;
-  font-size: 3.3rem;
+#container nav {
+  z-index: 20;
+  width: 35%;
+  height: 6vh;
+  position: fixed;
+  top: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 3.3px;
+  border-radius: 15px;
+  background: linear-gradient(90deg, rgb(63, 237, 251) 20%, rgb(63, 94, 251) 50%, rgb(213, 70, 252) 80%);
+  background-size: 200% 200%;
+  animation: animatedBackground 5s ease-in-out infinite;
+}
+@media screen and (max-width: 768px) {
+  #container nav {
+    display: block;
+    width: 100%;
+    height: 8vh;
+    position: fixed;
+    top: inherit;
+    bottom: 0;
+    border-radius: 0;
+    padding: 2px 0 0;
+  }
+}
+#container nav ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #252A2F;
+  border-radius: 13px;
+}
+@media screen and (max-width: 768px) {
+  #container nav ul {
+    border-radius: 0;
+  }
+}
+#container nav ul li {
+  list-style: none;
+}
+#container nav ul li a {
   font-family: "Poppins", sans-serif;
+  font-size: 1rem;
   font-weight: 600;
   color: #f9f9f9;
-  margin-bottom: 10vh;
-  z-index: 1;
-}
-@media screen and (max-width: 1024px) {
-  #root #container section#profile h1.name {
-    font-size: 2rem;
-  }
+  text-decoration: none;
 }
 @media screen and (max-width: 768px) {
-  #root #container section#profile h1.name {
-    font-size: 1.2rem;
-    margin-top: 8vh;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 10vh;
-  }
-  #root #container section#profile h1.name span.nameIntro {
+  #container nav ul li a p {
     display: none;
   }
 }
-#root #container section#profile h1.name sup a {
-  text-decoration: none;
-}
-#root #container section#profile h1.name sup a i {
-  font-size: 1.8rem;
-  color: rgb(63, 237, 251);
-}
 @media screen and (max-width: 1024px) {
-  #root #container section#profile h1.name sup a i {
+  #container nav ul li a {
+    font-size: 0.8rem;
+  }
+}
+#container nav ul li a i {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  #container nav ul li a i {
+    display: block;
     font-size: 1.4rem;
   }
 }
-@media screen and (max-width: 768px) {
-  #root #container section#profile h1.name sup a i {
-    font-size: 1rem;
-  }
-}
-#root #container section#profile .profile {
-  width: 100%;
-  height: 98%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: 9vh 10rem 0 10rem;
-  z-index: 1;
-}
-#root #container section#profile .profile .fotoProfile {
-  width: 40%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
+#container nav ul li button {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f9f9f9;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
 }
 @media screen and (max-width: 768px) {
-  #root #container section#profile .profile .fotoProfile {
-    width: 100%;
-    height: auto;
-    align-items: center;
-    justify-content: center;
+  #container nav ul li button p {
+    display: none;
   }
-}
-#root #container section#profile .profile .fotoProfile .cardFrofile {
-  width: 100%;
-  height: 80%;
-  border-radius: 10vh 10vh 0 0;
-  display: flex;
-}
-@media screen and (max-width: 768px) {
-  #root #container section#profile .profile .fotoProfile .cardFrofile {
-    width: 100%;
-    height: auto;
-    align-items: center;
-    justify-content: center;
-  }
-}
-#root #container section#profile .profile .fotoProfile .cardFrofile img {
-  padding: 0.8rem 0.8rem 0;
-  border: 1px solid transparent;
-  border-radius: 21vh 21vh 0 0;
-  height: 100%;
-  object-fit: contain;
-  background: linear-gradient(45deg, rgb(63, 237, 251) 20%, rgb(63, 94, 251) 50%, rgb(213, 70, 252) 80%);
-  background-size: 200% 200%;
-  animation: animatedBackground1 5s linear infinite;
 }
 @media screen and (max-width: 1024px) {
-  #root #container section#profile .profile .fotoProfile .cardFrofile img {
-    padding: 6px 6px 0;
+  #container nav ul li button {
+    font-size: 0.8rem;
   }
+}
+#container nav ul li button i {
+  display: none;
 }
 @media screen and (max-width: 768px) {
-  #root #container section#profile .profile .fotoProfile .cardFrofile img {
-    padding: 7px 7px 0;
-    width: 80%;
-    aspect-ratio: 1/1;
-    padding: 4px;
-    border-radius: 100%;
-    display: flex;
-    position: relative;
-    object-fit: cover;
-    object-position: center top;
-    background-size: 120% 120%;
-    margin-top: 10vh;
+  #container nav ul li button i {
+    display: block;
+    font-size: 1.4rem;
   }
 }
-#root #container section#profile .lineProfile {
-  width: 100%;
-  height: 5vh;
-  background: linear-gradient(45deg, rgb(63, 237, 251) 20%, rgb(63, 94, 251) 50%, rgb(213, 70, 252) 80%);
-  background-size: 180% 180%;
-  animation: animatedBackground2 5s linear infinite;
-}
-#root #container section#about {
+#container main#home {
+  z-index: 10;
   width: 100%;
   height: 100vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background: #252A2F;
 }
-#root #container section#about .title {
-  width: 13%;
-  height: 100vh;
+@media screen and (max-width: 768px) {
+  #container main#home {
+    height: 80vh;
+    padding-top: 10vh;
+  }
+}
+#container main#home .profile {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  background: #f9f9f9;
+  height: 98.5vh;
+  padding: 10vh 25vh 0;
 }
-#root #container section#about .title h1 {
+@media screen and (max-width: 768px) {
+  #container main#home .profile {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 5vh;
+    gap: 5vh;
+  }
+}
+#container main#home .profile .tagline {
+  width: 50%;
   display: flex;
-  padding-left: 20px;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-bottom: 10vh;
+}
+@media screen and (max-width: 768px) {
+  #container main#home .profile .tagline {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    justify-content: center;
+  }
+}
+#container main#home .profile h1 {
   font-family: "Poppins", sans-serif;
-  color: #252A2F;
-  font-size: 6.5rem;
+  font-size: 3rem;
+  font-weight: 600;
+  color: #f9f9f9;
+}
+@media screen and (max-width: 768px) {
+  #container main#home .profile h1 {
+    align-items: center;
+    font-size: 1.5rem;
+  }
+}
+#container main#home .profile h1 sup img {
+  width: 1.6rem;
+  aspect-ratio: 3/4;
+}
+@media screen and (max-width: 768px) {
+  #container main#home .profile h1 sup img {
+    display: none;
+  }
+}
+#container main#home .profile .boxProfile {
+  width: 50%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+@media screen and (max-width: 768px) {
+  #container main#home .profile .boxProfile {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+}
+#container main#home .profile .boxProfile .cardProfile {
+  display: flex;
+  width: 75%;
+  aspect-ratio: 3/4;
+  border-radius: 25vh 25vh 0 0;
+  padding: 1.15vh 1.5vh 0;
+  background: linear-gradient(90deg, rgb(63, 237, 251) 20%, rgb(63, 94, 251) 50%, rgb(213, 70, 252) 80%);
+  background-size: 200% 200%;
+  animation: animatedBackground 5s ease-in-out infinite;
+}
+@media screen and (max-width: 768px) {
+  #container main#home .profile .boxProfile .cardProfile {
+    width: 70%;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    padding: 1vh;
+    align-items: center;
+    justify-content: center;
+  }
+}
+#container main#home .profile .boxProfile .cardProfile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+  border-radius: 24vh 24vh 0 0;
+}
+@media screen and (max-width: 768px) {
+  #container main#home .profile .boxProfile .cardProfile img {
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+#container main#home .line {
+  width: 100%;
+  height: 1.5vh;
+  background: linear-gradient(90deg, rgb(63, 237, 251) 20%, rgb(63, 94, 251) 50%, rgb(213, 70, 252) 80%);
+  background-size: 200% 200%;
+  animation: animatedBackground 5s ease-in-out infinite;
+}
+@media screen and (max-width: 768px) {
+  #container main#home .line {
+    display: none;
+  }
+}
+#container main#about {
+  z-index: 10;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+@media screen and (max-width: 768px) {
+  #container main#about {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1vh;
+  }
+}
+#container main#about .title {
+  background-color: #f9f9f9;
+  width: 12%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+@media screen and (max-width: 768px) {
+  #container main#about .title {
+    width: 100%;
+    height: 10vh;
+    padding-left: 0.4rem;
+    padding-bottom: 0;
+  }
+}
+#container main#about .title h1 {
+  transform: rotate(-90deg);
+  font-family: "Poppins", sans-serif;
+  font-size: 7rem;
   font-weight: 700;
-  letter-spacing: 20px;
-  rotate: 270deg;
+  text-align: center;
+  letter-spacing: 1rem;
 }
-#root #container section#about .cardDescription {
-  width: 87%;
+@media screen and (max-width: 768px) {
+  #container main#about .title h1 {
+    transform: rotate(0deg);
+    font-size: 2.5rem;
+  }
+}
+#container main#about .boxDescription {
+  width: 88%;
   height: 100%;
-  padding-top: 10vh;
+  padding: 20vh 8vh 0;
+}
+@media screen and (max-width: 768px) {
+  #container main#about .boxDescription {
+    width: 100%;
+    height: auto;
+    padding: 5vh;
+  }
+}
+#container main#about .boxDescription .description {
+  color: #f9f9f9;
+  width: 100%;
+  height: 78%;
   display: flex;
   flex-direction: row;
-  z-index: 1;
-}
-#root #container section#about .cardDescription .description1 {
-  width: 50%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+  align-items: flex-start;
   justify-content: space-between;
-  padding: 4rem 4rem 3rem;
 }
-#root #container section#about .cardDescription .description1 h1 {
-  margin-bottom: 10px;
+@media screen and (max-width: 768px) {
+  #container main#about .boxDescription .description {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    gap: 5vh;
+  }
 }
-#root #container section#about .cardDescription .description1 .boxDescription1 {
-  text-align: justify;
-  color: #f9f9f9;
+#container main#about .boxDescription .description .aboutme {
+  width: 45%;
+}
+@media screen and (max-width: 768px) {
+  #container main#about .boxDescription .description .aboutme {
+    width: 100%;
+  }
+}
+#container main#about .boxDescription .description .aboutme h2 {
   font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
 }
-#root #container section#about .cardDescription .description1 .sosmed {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  font-size: 1.5rem;
+@media screen and (max-width: 768px) {
+  #container main#about .boxDescription .description .aboutme h2 {
+    font-size: 1.5rem;
+  }
 }
-#root #container section#about .cardDescription .description1 .sosmed ul {
-  list-style: none;
+#container main#about .boxDescription .description .aboutme p {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: justify;
+  line-height: 1.7rem;
 }
-#root #container section#about .cardDescription .description1 .sosmed ul li a {
-  text-decoration: none;
-  color: #f9f9f9;
-}
-#root #container section#about .cardDescription .description2 {
-  width: 50%;
-  height: 100%;
+#container main#about .boxDescription .description .qualifications {
+  width: 45%;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
-  padding: 4rem 3rem 3rem;
+  align-items: flex-start;
+  gap: 8vh;
 }
-#root #container section#about .cardDescription .description2 h1 {
-  margin-bottom: 10px;
+@media screen and (max-width: 768px) {
+  #container main#about .boxDescription .description .qualifications {
+    width: 100%;
+    gap: 5vh;
+  }
 }
-#root #container section#about .cardDescription .description2 .education {
+#container main#about .boxDescription .description .qualifications .education {
+  width: 100%;
+}
+#container main#about .boxDescription .description .qualifications .education h2 {
   font-family: "Poppins", sans-serif;
-  color: #f9f9f9;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
 }
-#root #container section#about .cardDescription .description2 .education ul li {
-  margin-left: 1.1rem;
+@media screen and (max-width: 768px) {
+  #container main#about .boxDescription .description .qualifications .education h2 {
+    font-size: 1.5rem;
+  }
 }
-#root #container section#about .cardDescription .description2 .skill {
+#container main#about .boxDescription .description .qualifications .education ul {
   font-family: "Poppins", sans-serif;
-  color: #f9f9f9;
+  font-size: 1rem;
+  font-weight: 500;
+  list-style-type: circle;
+  padding-left: 1.5rem;
 }
-#root #container section#about .cardDescription .description2 .skill ul {
+#container main#about .boxDescription .description .qualifications .education p {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: justify;
+}
+#container main#about .boxDescription .description .qualifications .skill {
+  width: 100%;
+}
+#container main#about .boxDescription .description .qualifications .skill h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+@media screen and (max-width: 768px) {
+  #container main#about .boxDescription .description .qualifications .skill h2 {
+    font-size: 1.5rem;
+  }
+}
+#container main#about .boxDescription .description .qualifications .skill ul {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  list-style-type: none;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.8rem 1.5rem;
 }
-#root #container section#about .cardDescription .description2 .skill ul li {
+#container main#about .boxDescription .description .qualifications .skill ul li {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-right: 15px;
 }
-#root #container section#about .cardDescription .description2 .skill ul img#icon {
+#container main#about .boxDescription .description .qualifications .skill ul li img {
+  width: 1.3rem;
+}
+#container main#about .boxDescription .description .qualifications .skill ul li img.imageSASS {
   filter: invert(1);
-  width: 1.5rem;
-  margin-right: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
-#root #container section#about .cardDescription .description2 .skill ul i {
-  font-size: 1.3rem;
+#container main#about .boxDescription .description .qualifications .skill ul li img.imageTailwind {
   aspect-ratio: 1/1;
-  color: #f9f9f9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 4px;
+  background-color: white;
+  border-radius: 1vh;
 }
-#root #container section#projects {
+#container main#about .boxDescription .description .qualifications .skill ul li i {
+  font-size: 1.5rem;
+}
+#container main#about .boxDescription .description .qualifications .skill ul li img,
+#container main#about .boxDescription .description .qualifications .skill ul li i {
+  margin-right: 0.3rem;
+}
+#container main#about .boxDescription .sosmed {
+  width: 100%;
+  height: 22%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+@media screen and (max-width: 768px) {
+  #container main#about .boxDescription .sosmed {
+    height: auto;
+    justify-content: center;
+    margin-top: 2vh;
+  }
+}
+#container main#about .boxDescription .sosmed a {
+  color: #f9f9f9;
+}
+#container main#about .boxDescription .sosmed a i {
+  font-size: 1.5rem;
+  border-radius: 100vh;
+}
+#container main#projects {
+  z-index: 10;
   width: 100%;
   height: 100vh;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  background: #252A2F;
+  flex-direction: column;
 }
-#root #container section#projects .boxprojects {
-  width: 100%;
-  z-index: 10;
+@media screen and (max-width: 768px) {
+  #container main#projects {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5vh;
+  }
 }
-#root #container section#projects .boxprojects .title {
+#container main#projects .title {
   width: 100%;
   height: 15vh;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  align-content: space-between;
   justify-content: center;
-  gap: 0;
-  padding-right: 3rem;
-  z-index: 10;
+  padding-right: 5vh;
 }
-#root #container section#projects .boxprojects .title h1 {
+@media screen and (max-width: 768px) {
+  #container main#projects .title {
+    height: auto;
+    align-items: flex-start;
+    padding-right: 0;
+    padding-left: 5vh;
+  }
+}
+#container main#projects .title h1 {
   font-family: "Poppins", sans-serif;
   font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.42rem;
   color: #f9f9f9;
-  letter-spacing: 4px;
-  line-height: 2rem;
 }
-#root #container section#projects .boxprojects .title .line {
-  width: 200px;
-  height: 5px;
+@media screen and (max-width: 768px) {
+  #container main#projects .title h1 {
+    font-size: 1.5rem;
+  }
+}
+#container main#projects .title .line {
+  width: 223px;
+  height: 0.3rem;
   border-radius: 10vh;
-  background: linear-gradient(45deg, rgb(63, 237, 251) 20%, rgb(63, 94, 251) 50%, rgb(213, 70, 252) 80%);
-  background: linear-gradient(45deg, rgb(63, 237, 251) 20%, rgb(63, 94, 251) 50%, rgb(213, 70, 252) 80%);
-  background-size: 150% 150%;
-  animation: animatedBackground1 5s linear infinite;
+  background: linear-gradient(90deg, rgb(63, 237, 251) 20%, rgb(63, 94, 251) 50%, rgb(213, 70, 252) 80%);
+  background-size: 200% 200%;
+  animation: animatedBackground 5s ease-in-out infinite;
 }
-#root #container section#projects .boxprojects main {
+@media screen and (max-width: 768px) {
+  #container main#projects .title .line {
+    width: 170px;
+  }
+}
+#container main#projects .boxProjects {
   width: 100%;
   height: 85vh;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0 5rem;
-}
-#root #container section#projects .boxprojects main button {
-  width: 3rem;
-  height: 1.5rem;
-  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: absolute;
 }
-#root #container section#projects .boxprojects main button.left {
-  display: none;
-  left: 0;
+@media screen and (max-width: 768px) {
+  #container main#projects .boxProjects {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5vh;
+  }
 }
-#root #container section#projects .boxprojects main button.right {
-  display: none;
-  right: 0;
+#container main#projects .boxProjects .cardProjects:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  transition: 0.5s;
 }
-#root #container section#projects .boxprojects main .project {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 6rem;
-  overflow-x: auto;
-}
-#root #container section#projects .boxprojects main .project .card {
-  height: 80%;
-  aspect-ratio: 3/4;
-  border-radius: 2vh;
+#container main#projects .boxProjects .cardProjects {
+  width: 40%;
+  border-radius: 1vh;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
-  box-shadow: -5px 5px 30px -1px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: -5px 5px 30px -1px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: -5px 5px 30px -1px rgba(0, 0, 0, 0.5);
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: -9px 10px 41px -1px rgba(0, 0, 0, 0.62);
+  -webkit-box-shadow: -9px 10px 41px -1px rgba(0, 0, 0, 0.62);
+  -moz-box-shadow: -9px 10px 41px -1px rgba(0, 0, 0, 0.62);
 }
-#root #container section#projects .boxprojects main .project .card .foto {
-  width: 100%;
-  height: 45%;
+@media screen and (max-width: 768px) {
+  #container main#projects .boxProjects .cardProjects {
+    width: 80%;
+  }
 }
-#root #container section#projects .boxprojects main .project .card .foto img {
+#container main#projects .boxProjects .cardProjects img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  border-radius: 2vh 2vh 0 0;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 1vh 1vh 0 0;
 }
-#root #container section#projects .boxprojects main .project .card .description {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  padding: 0 1rem;
-  font-family: "Poppins", sans-serif;
+#container main#projects .boxProjects .cardProjects .description {
   color: #f9f9f9;
-  letter-spacing: 1px;
+  width: 100%;
+  padding: 1rem 2rem;
+  font-family: "Poppins", sans-serif;
 }
-#root #container section#projects .boxprojects main .project .card .description h4 {
-  font-size: 1.2rem;
-}
-#root #container section#projects .boxprojects main .project .card .description p {
-  font-size: 0.9rem;
+#container main#projects .boxProjects .cardProjects .description p {
   text-align: justify;
 }
-#root #container section img.background {
+#container main#contact {
+  background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: left top;
-  position: absolute;
-  opacity: 0.01;
-  filter: invert(1);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
-#root #container section#projects img.background {
-  transform: scaleY(-1);
-  -webkit-transform: scaleY(-1);
+#container main#contact form {
+  position: relative;
+  width: 50%;
+  background: rgba(37, 42, 47, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  border-radius: 7vh 1vh 7vh 1vh;
+  padding: 3vh 5vh;
+  gap: 2vh;
 }
-#root #container footer {
-  width: 100%;
-  height: 8vh;
+@media screen and (max-width: 768px) {
+  #container main#contact form {
+    width: 80%;
+  }
+}
+#container main#contact form #exit {
+  width: 2rem;
+  aspect-ratio: 1/1;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #252A2F;
-}
-#root #container footer img.background {
-  width: 100%;
-  height: 8vh;
-  object-fit: cover;
-  object-position: right top;
   position: absolute;
-  opacity: 0.01;
-  filter: invert(1);
+  top: 0;
+  right: 0;
+  font-size: 1.5rem;
+  color: #252A2F;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  background-color: #f9f9f9;
+  border-radius: 1vh;
+  cursor: pointer;
 }
-#root #container footer h5 {
+#container main#contact form h1 {
   width: 100%;
-  height: 6vh;
-  margin-top: 8vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-family: "Poppins", sans-serif;
-  font-weight: 500;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
   color: #f9f9f9;
-  background: linear-gradient(45deg, rgb(63, 237, 251) 20%, rgb(63, 94, 251) 50%, rgb(213, 70, 252) 80%);
-  background-size: 150% 150%;
-  animation: animatedBackground1 5s linear infinite;
+}
+#container main#contact form label {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1vh;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f9f9f9;
+}
+#container main#contact form label p sup {
+  color: red;
+}
+#container main#contact form label input,
+#container main#contact form label textarea {
+  width: 100%;
+  height: 2.5rem;
+  background-color: #f9f9f9;
+  border-radius: 1vh;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #252A2F;
+  padding: 0 1vh;
+}
+#container main#contact form label textarea {
+  height: 8rem;
+  resize: none;
+}
+#container main#contact form button {
+  width: 20%;
+  height: 2.5rem;
+  background-color: #f9f9f9;
+  border-radius: 1vh;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1vh;
+  color: #252A2F;
+  cursor: pointer;
+}
+#container .show {
+  z-index: 100;
+  opacity: 1;
+  transform: scale(1);
+}
+#container .hide {
+  z-index: -100;
+  opacity: 0;
+  transform: scale(0.8);
+}
+#container footer#copyright {
+  z-index: 10;
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 768px) {
+  #container footer#copyright {
+    height: 10vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2vh;
+    margin-bottom: 10vh;
+  }
+}
+#container footer#copyright p {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #f9f9f9;
+}
+@media screen and (max-width: 1024px) {
+  #container footer#copyright p {
+    font-size: 0.7rem;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

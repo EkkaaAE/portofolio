@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,143 +15,171 @@
     <title>My Portofolio</title>
     <link rel="icon" href="./public/assets/image/icon.jpg" type="image/png">
 </head>
+
 <body>
-    <div class="maintenance">Masa Reboisasi</div>
     <div id="root">
-        <nav id="navigation">
-            <div class="warpHeader">
-                <ul class="header">
+        <img class="background" src="./public/assets/image/bgWallpaper.png">
+        <div id="container">
+            <nav>
+                <ul>
                     <li>
-                        <a href="#profile"><b>Home</b></a>
+                        <a href="#home">
+                            <p>Home</p>
+                            <i class="fa-solid fa-house"></i>
+                        </a>
                     </li>
                     <li>
-                        <a href="#about">About</a>
+                        <a href="#about">
+                            <p>About</p>
+                            <i class="fa-solid fa-user"></i>
+                        </a>
                     </li>
                     <li>
-                        <a href="#projects">Projects</a>
+                        <a href="#projects">
+                            <p>Projects</p>
+                            <i class="fa-solid fa-briefcase"></i>
+                        </a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <button id="buttonContact">
+                            <p>Contact</p>
+                            <i class="fa-solid fa-envelope"></i>
+                        </button>
                     </li>
                 </ul>
-            </div>
-            <div class="nickname">
-                <div class="nick">Eka <br> Prasetiawan,</div>
-            </div>
-            <button class="burgerButton">
-                <div class="burger">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
-                </div>
-            </button>
-        </nav>
-        <div id="container">
-            <section id="profile">
-                <img class="background" src="./public/assets/image/background.jpg" alt="">
+            </nav>
+            <main id="home">
                 <div class="profile">
-                    <h1 class="name fade-in">
-                        I'am 
-                        <span class="nameIntro">Eka Prasetiawan</span>, <br>
-                        Frontend Developer <br>
-                        from Blitar<sup> <a href="https://maps.app.goo.gl/GKSZRBNVndkR9dFW8" target="_blank"><i class="fa-solid fa-location-dot"></i></a></sup>
-                    </h1>
-                    <div class="fotoProfile">
-                        <div class="cardFrofile">
+                    <div class="tagline">
+                        <h1>I'am Eka Prasetiawan, <br>Frontend Developer <br>from Blitar <sup><a
+                                    href="https://www.google.com/maps/place/Kabupaten+Blitar" target="_blank">
+                                    <img src="./public/assets/image/iconMaps.png" alt="Maps">
+                                </a></sup></h1>
+                    </div>
+                    <div class="boxProfile">
+                        <div class="cardProfile">
                             <img src="./public/assets/image/profile.jpg" alt="profile.png">
                         </div>
                     </div>
                 </div>
-                <div class="lineProfile"></div>
-            </section>
-            <section id="about">
-                <img class="background" src="./public/assets/image/background.jpg" alt="">
+                <div class="line"></div>
+            </main>
+            <main id="about">
                 <div class="title">
                     <h1>ABOUTME</h1>
                 </div>
-                <div class="cardDescription">
-                    <div class="description1">
-                        <div class="boxDescription1">
-                            <h1>Lorem, ipsum dolor</h1>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus soluta labore ea expedita, modi neque reprehenderit reiciendis in unde quas, suscipit repellendus aliquid iure dolore perferendis? Possimus vero dolorem atque consectetur quibusdam repellendus quisquam distinctio debitis ipsa nesciunt. Ad aliquam necessitatibus error voluptatibus, labore aliquid voluptatum. Sed ducimus inventore laudantium pariatur debitis molestias sapiente, atque, illum minima, minus expedita quae blanditiis soluta quo eos aut numquam earum sunt ab autem. Pariatur id sint libero quam atque deserunt molestias numquam, alias, quas ad repellat inventore reprehenderit in aliquid beatae ducimus totam velit. Saepe velit tenetur qui doloribus dignissimos ab accusamus enim!</p>
+                <div class="boxDescription">
+                    <div class="description">
+                        <div class="aboutme">
+                            <h2>Hello! I am Eka Prasetiawan,</h2>
+                            <p>I am a Front-End Developer from Blitar with expertise in HTML, CSS, SASS, JavaScript, and
+                                frameworks like Tailwind and Bootstrap. I focus on creating responsive, attractive, and
+                                user-friendly interfaces, with a clean coding approach and meticulous attention to
+                                design details. I am enthusiastic about learning new technologies and creating engaging
+                                and functional user experiences.</p>
                         </div>
-                        <div class="sosmed">
-                            <ul>
-                                <li><a target="_blank" href="https://www.instagram.com/ekkaa_blt/"><i class="fa-brands fa-instagram"></i></a></li>
-                            </ul>
-                            <ul>
-                                <li><a target="_blank" href="https://www.linkedin.com/in/101103-ekaprasetiawan/"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                            </ul>
-                            <ul>
-                                <li><a target="_blank" href="https://github.com/EkkaaAE"><i class="fa-brands fa-github"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="description2">
-                        <div class="education">
-                            <h1>Education</h1>
-                            <ul>
-                                <li>Balitar Islamic University (2022 - 2026) <br> Informatics Engineering</li>
-                            </ul>
-                        </div>
-                        <div class="skill">
-                            <h1>Skill</h1>
-                            <ul>
-                                <li><i class="fa-brands fa-html5"></i>HTML</li>
-                                <li><i class="fa-brands fa-css3-alt"></i>CSS</li>
-                                <li><i class="fa-brands fa-sass"></i>SASS</li>
-                                <li><i class="fa-brands fa-js"></i>JavaScript</li>
-                                <li><img id="icon" src="./public/assets/image/tailwindcss.webp" alt="">Tailwind</li>
-                                <li><i class="fa-brands fa-bootstrap"></i>Bootstrap</li>
-                                <li><i class="fa-brands fa-git-alt"></i>Git</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="projects">
-                <img class="background" src="./public/assets/image/background.jpg" alt="">
-                <div class="boxprojects">
-                    <div class="title">
-                        <h1>PROJECTS</h1>
-                        <div class="line"></div>
-                    </div>
-                    <main>
-                        <button class="left">kiri</button>
-                        <div class="project">
-                            <div class="card Project1">
-                                <div class="foto">
-                                    <img src="./public/assets/image/profile.jpg" alt="">
-                                </div>
-                                <div class="description">
-                                    <h4>Lorem, ipsum.</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam similique soluta dolores, id maxime ipsum perspiciatis labore quo delectus, ad sint fugit corporis sit beatae.</p>
-                                </div>
+                        <div class="qualifications">
+                            <div class="education">
+                                <h2>Education</h2>
+                                <ul>
+                                    <li>Balitar Islamic University (2022 - 2026) <br> Bachelor of Information Technology
+                                    </li>
+                                </ul>
                             </div>
-                            <div class="card Project1">
-                                <div class="foto">
-                                    <img src="./public/assets/image/profile.jpg" alt="">
-                                </div>
-                                <div class="description">
-                                    <h4>Lorem, ipsum.</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam similique soluta dolores, id maxime ipsum perspiciatis labore quo delectus, ad sint fugit corporis sit beatae.</p>
-                                </div>
+                            <div class="skill">
+                                <h2>Skill</h2>
+                                <ul>
+                                    <li>
+                                        <i class="fa-brands fa-html5"></i>
+                                        HTML
+                                    </li>
+                                    <li>
+                                        <i class="fa-brands fa-css3-alt"></i>
+                                        CSS
+                                    </li>
+                                    <li>
+                                        <img class="imageSASS" src="./public/assets/image/SASS.png">
+                                        SASS
+                                    </li>
+                                    <li>
+                                        <i class="fa-brands fa-js-square"></i>
+                                        JavaScript
+                                    </li>
+                                    <li>
+                                        <img class="imageTailwind" src="./public/assets/image/tailwindcss.webp">
+                                        Tailwind
+                                    </li>
+                                    <li>
+                                        <i class="fa-brands fa-bootstrap"></i>
+                                        Bootstrap
+                                    </li>
+                                    <li>
+                                        <i class="fa-brands fa-git-alt"></i>
+                                        Git
+                                    </li>
+                                </ul>
                             </div>
                         </div>
-                        <button class="right">kanan</button>
-                    </main>
+                    </div>
+                    <div class="sosmed">
+                        <a target="_blank" href="https://www.instagram.com/ekkaa_blt"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a target="_blank" href="https://www.linkedin.com/in/101103-ekaprasetiawan"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                        <a target="_blank" href="https://github.com/EkkaaAE"><i class="fa-brands fa-github"></i></a>
+                    </div>
                 </div>
-            </section>
-            <!-- <section id="contact">
+            </main>
+            <main id="projects">
                 <div class="title">
-                    <h1>CONTACT</h1>
+                    <h1>PROJECTS</h1>
+                    <div class="line"></div>
                 </div>
-            </section> -->
-            <footer>
-                <img class="background" src="./public/assets/image/background.jpg">
-                <h5>Copyright &copy; Eka_Pras_2024</h5>
+                <div class="boxProjects">
+        transition: opacity 0.3s ease, transform 0.3s ease;
+                    <a target="_blank" href="https://github.com/EkkaaAE/KUI.git" class="cardProjects">
+                        <img src="./public/assets/image/UAS_sistem_storage.png" alt="Sistem Storage">
+                        <div class="description">
+                            <h2>Sistem Storage</h2>
+                            <p>Laravel-based web application developed as a UAS task to manage inventory of goods in a
+                                warehouse. This application allows users to add, edit, and delete goods data, as well as
+                                monitor storage status and location. With a responsive and intuitive interface, this
+                                project improves the efficiency of inventory management.</p>
+                        </div>
+                    </a>
+                </div>
+            </main>
+            <main id="contact" class="hide">
+                <form action="https://formspree.io/f/xdkoowve" method="POST">
+                    <div id="exit"><b>x</b></div>
+                    <h1>Contact Me</h1>
+                    <label>
+                        <p>
+                            Your Fullname<sup>*</sup>:
+                        </p>
+                        <input type="text" name="fullname" required>
+                    </label>
+                    <label>
+                        <p>
+                            Your email<sup>*</sup>:
+                        </p>
+                        <input type="email" name="email" required>
+                    </label>
+                    <label>
+                        <p>
+                            Your message<sup>*</sup>:
+                        </p>
+                        <textarea name="message" required></textarea>
+                    </label>
+                    <!-- your other form fields go here -->
+                    <button type="submit">Send</button>
+                </form>
+            </main>
+            <footer id="copyright">
+                <p>© 2024 EkaPras. All rights reserved.</p>
             </footer>
         </div>
     </div>
 </body>
+
 </html>
